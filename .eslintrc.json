@@ -1,0 +1,16 @@
+{
+    "extends": "standard",
+    "plugins": [
+        "standard",
+        "promise"
+    ],
+    "globals": {
+      "config": true,
+      "logger": true,
+      "_": true,
+      "fse": true
+    },
+    "rules": {
+        "no-multi-spaces": 0
+    }
+}
