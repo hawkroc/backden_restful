@@ -23,5 +23,8 @@ module.exports = {
     replaceConsole: true,
     level: 'AUTO',
     console: false
+  },
+  mongodb: {
+    url: `mongodb://localhost:27017/TestInit`
   }
 }
