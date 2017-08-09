@@ -4,15 +4,15 @@
   "description": "一个 express 脚手架(ES7)",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --recursive --reporter mochawesome",
     "start": "node app.js",
     "dev": ""
   },
+  "repository": "https://github.com/noraincode/express-go",
   "author": "norain4u",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "colors": "^1.1.2",
     "compression": "^1.6.2",
     "config": "^1.26.1",
     "cookie-parser": "^1.4.3",
@@ -22,19 +22,21 @@
     "fs-extra": "^3.0.1",
     "lodash": "^4.17.4",
     "log4js": "^1.1.1",
-    "moment": "^2.18.1",
     "mongoose": "^4.11.6",
     "path": "^0.12.7",
     "response-time": "^2.3.2",
     "serve-favicon": "^2.4.3"
   },
   "devDependencies": {
+    "chai": "^4.1.1",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-html": "^2.0.3",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^3.5.0",
+    "mochawesome": "^2.3.0"
   }
 }

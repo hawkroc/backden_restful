@@ -10,7 +10,7 @@ const initService = require('../../service/v1/init.js')
 
 async function init (req, res, next) {
   let ret = await initService.getData()
-  return next({code: 200, msg: {data: ret}})
+  return next({code: 200, msg: {data: ret, count: ret.length}})
 }
 
 async function addData (req, res, next) {
