@@ -7,19 +7,22 @@
 'use strict'
 
 const initService = require('../../service/v1/init.js')
-const Init = require('../../models/init.js')
-
-module.exports = {
-  init
-}
 
 async function init (req, res, next) {
-  // let ret = await initService.getData()
-  // let ret = await Init.count()
-  Init.count().then((count) => {
-    return next({code: 200, msg: count})
-  })
-  .catch(err => {
-    return next({code: 500, msg: err})
-  })
+  let ret = await initService.getData()
+  return next({code: 200, msg: {data: ret}})
+}
+
+async function addData (req, res, next) {
+  let ret = await initService.addData(req.body)
+  if (ret.errors) {
+    return next({code: 500, msg: {data: ret.errors}})
+  } else {
+    return next({code: 200, msg: 'success'})
+  }
+}
+
+module.exports = {
+  init,
+  addData
 }

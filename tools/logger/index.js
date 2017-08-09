@@ -27,6 +27,15 @@ const log4jsConfig = {
     'category': 'main'
   }, {
     'type': 'logLevelFilter',
+    'level': 'WARN',
+    'appender': {
+      type: 'file',
+      filename: path.join(config.log.dir, 'main.WARN'),
+      maxLogSize: 20480
+    },
+    'category': 'main'
+  }, {
+    'type': 'logLevelFilter',
     'level': 'ERROR',
     'appender': {
       type: 'file',

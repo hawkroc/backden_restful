@@ -9,5 +9,6 @@
 const initCtrl = require('../../controllers/v1/init')
 
 module.exports = (router) => {
-  router.get('/', initCtrl.init)
+  router.get('/initdata', initCtrl.init)
+  router.post('/initdata', initCtrl.addData)
 }

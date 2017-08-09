@@ -18,8 +18,6 @@ const compression       = require('compression')
 
 const router            = require('../app/routes')
 const formatResp        = require('../app/middlewares/format-resp')
-const mongoose          = require('mongoose')
-const mongodbUrl        = `mongodb://@${config.mongodb.host}:${config.mongodb.port}/${config.mongodb.database}`
 
 const app = express()
 
@@ -32,9 +30,6 @@ app.use(cookieParser())
 app.use(serveFavicon(path.join(__dirname, '../static/img/fav.ico')))
 app.use(router)
 app.use(formatResp.formatResp({format: 'JSON'}))
-
-mongoose.Promise = global.Promise
-mongoose.createConnection(mongodbUrl)
 
 function start () {
   app.listen(config.web.port, function () {

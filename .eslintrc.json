@@ -8,7 +8,9 @@
       "config": true,
       "logger": true,
       "_": true,
-      "fse": true
+      "fse": true,
+      "db": true,
+      "_colors": true
     },
     "rules": {
         "no-multi-spaces": 0
