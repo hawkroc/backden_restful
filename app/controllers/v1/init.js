@@ -22,7 +22,7 @@ async function addData (req, res, next) {
   }
 }
 
-module.exports = {
+module.exports = errorHandler({
   init,
   addData
-}
+})

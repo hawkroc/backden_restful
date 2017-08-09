@@ -10,7 +10,8 @@
       "_": true,
       "fse": true,
       "db": true,
-      "_colors": true
+      "_colors": true,
+      "errorHandler": true
     },
     "rules": {
         "no-multi-spaces": 0
