@@ -30,11 +30,11 @@ exports.formatResp = function (options) {
     let desc = result.desc || status[result.code].desc
 
     /**
-     * 错误处理
+     * error handler
      *
      * @param {any} err
      */
-    function handelError (err) {
+    function handelError (err){
       logger.err('\nError begin', '\n', err, '\n', 'Error end')
     }
     if (err) {

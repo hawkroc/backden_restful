@@ -1,14 +1,14 @@
 {
   "name": "express-go",
   "version": "1.0.0",
-  "description": "一个 express 脚手架(ES7)",
+  "description": "new project backend",
   "main": "app.js",
   "scripts": {
     "test": "mocha --recursive --reporter mochawesome",
     "start": "node app.js",
     "dev": ""
   },
-  "repository": "https://github.com/noraincode/express-go",
+  "repository": "https://github.com/",
   "author": "norain4u",
   "license": "MIT",
   "dependencies": {
@@ -16,13 +16,13 @@
     "compression": "^1.6.2",
     "config": "^1.26.1",
     "cookie-parser": "^1.4.3",
-    "express": "^4.15.3",
+    "express": "^4.16.0",
     "express-session": "^1.15.3",
     "fs": "0.0.1-security",
     "fs-extra": "^3.0.1",
     "lodash": "^4.17.4",
     "log4js": "^1.1.1",
-    "mongoose": "^4.11.6",
+    "mongoose": "^4.13.2",
     "path": "^0.12.7",
     "response-time": "^2.3.2",
     "serve-favicon": "^2.4.3"
