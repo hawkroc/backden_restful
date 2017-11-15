@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
   name: {
@@ -20,12 +20,12 @@ const UserSchema = new Schema({
       type: Date,
       default: Date.now()
     },
-    number:{
-      type:Number,
-      default:0
+    number: {
+      type: Number,
+      default: 0
     }
   }
-});
+})
 
 // UserSchema.pre("save", (next)=> {
 //   if (this.isNew) {
@@ -71,5 +71,4 @@ const UserSchema = new Schema({
 
 // }
 
-
-module.exports = UserSchema;
+module.exports = UserSchema

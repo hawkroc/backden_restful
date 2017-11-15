@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha --recursive --reporter mochawesome",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "lint": "eslint --ext .js --ext .jsx . --ignore-pattern **/*.tests.js --fix"
   },
   "repository": "https://github.com/",
   "author": "norain4u",

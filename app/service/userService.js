@@ -1,9 +1,9 @@
-"use strict";
-const User = require("../models/user");
+'use strict'
+const User = require('../models/user')
 const getUser = async () => {
-  let ret = await "test is success"; //db.Init.find()
-  return ret;
-};
+  let ret = await 'test is success' // db.Init.find()
+  return ret
+}
 
 // const addUser = async (name,key) => {
 //   let ret = await "test2 is success"; // db.Init.create(opt)
@@ -20,25 +20,23 @@ const getUser = async () => {
 //   return ret;
 // };
 
-const addUser = async (name, key) => {
-
-  let user = new User();
-  user.key = key;
-  user.name = name;
-return   await User.deleteOne({ key: key }, err => {
+const addUser =  (name, key) => {
+  let user = new User()
+  user.key = key
+  user.name = name
+  return    User.deleteOne({ key: key }, err => {
     if (err) {
-      return err;
+      return err
     }
     user.save(err => {
       if (err) {
-        return err;
+        return err
       }
-    });
-  });
-
-};
+    })
+  })
+}
 
 module.exports = {
   getUser,
   addUser
-};
+}

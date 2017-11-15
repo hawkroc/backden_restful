@@ -10,13 +10,12 @@
 
 const status = require('./settings')
 
-
 exports.formatResp = function (options) {
   options = options || {}
   let defaultFormat = options.format || 'JSONString'
 
   return function formatResp (result, req, res, next) {
-    //console.log('result'+JSON.stringify(result))
+    // console.log('result'+JSON.stringify(result))
     if (_.isError(result)) {
       result = {
         code: result.status,
@@ -35,9 +34,6 @@ exports.formatResp = function (options) {
      *
      * @param {any} err
      */
-    function handelError (err){
-      console.log('\nError begin', '\n', err, '\n', 'Error end')
-    }
 
     let resp = {
       Success: status[result.code].succeed,
@@ -46,18 +42,16 @@ exports.formatResp = function (options) {
       Msg: msg,
       extData: ext
     }
-  
+
     if (err) {
-      resp.Code=result.code
-      //res.
-    } 
+      resp.Code = result.code
+      // res.
+    }
     let format = defaultFormat
     if (format === 'JSONString') {
       res.send(JSON.stringify(resp))
     } else {
       res.json(resp)
     }
-
-
   }
 }
