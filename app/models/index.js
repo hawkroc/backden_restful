@@ -16,7 +16,6 @@ mongoose.connect(config.mongodb.url, {useMongoClient: true})
         })
         .once('open', () => {
           logger.info(`Database ${config.mongodb.url} Connected!`)
-          logger.info('May The Bug Be With You XD....')
         })
 
 fs.readdirSync(__dirname)

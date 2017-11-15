@@ -14,7 +14,8 @@ const userService = require('../service/userService')
 }
 
  const addUser =async(req, res, next)=> {
-  let ret = await userService.addUser(req.body)
+  // console.log('req.body'+JSON.stringify(req.body))
+  let ret =await userService.addUser(req.body.name,req.body.key)
   if (ret.errors) {
     return next({code: 500, msg: {data: ret.errors}})
   } else {

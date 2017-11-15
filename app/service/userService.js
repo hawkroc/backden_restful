@@ -5,10 +5,36 @@ const getUser = async () => {
   return ret;
 };
 
-const addUser = async opt => {
-  let ret = await "test2 is success"; // db.Init.create(opt)
-  console.log('test')
-  return ret;
+// const addUser = async (name,key) => {
+//   let ret = await "test2 is success"; // db.Init.create(opt)
+//   let user =new User()
+//   user.name=name
+//   user.key=key
+//   user.save((err) => {
+//          if (err) {
+
+//              return err;
+//          }
+//      });
+//   console.log('test')
+//   return ret;
+// };
+
+const addUser = async (name, key) => {
+  let user = new User();
+  user.key = key;
+  user.name = name;
+   await User.deleteOne({ key: key }, err => {
+    if (err) {
+      return err;
+    }
+    user.save(err => {
+      if (err) {
+        return err;
+      }
+    });
+  });
+  return user
 };
 
 module.exports = {

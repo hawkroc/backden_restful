@@ -1,4 +1,5 @@
 'use strict'
+const logger = require('./../../tools/logger/index')
 
 function catchError (ctrl) {
   return function (req, res, next) {

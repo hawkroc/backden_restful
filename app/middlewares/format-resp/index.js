@@ -10,6 +10,7 @@
 
 const status = require('./settings')
 
+
 exports.formatResp = function (options) {
   options = options || {}
   let defaultFormat = options.format || 'JSONString'
@@ -35,7 +36,8 @@ exports.formatResp = function (options) {
      * @param {any} err
      */
     function handelError (err){
-      logger.err('\nError begin', '\n', err, '\n', 'Error end')
+      //console.log('err'+JSON.stringify(err))
+      console.log('\nError begin', '\n', err, '\n', 'Error end')
     }
     if (err) {
       handelError(err)

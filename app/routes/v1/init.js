@@ -13,4 +13,5 @@ module.exports = (router) => {
   router.get('/initdata', initCtrl.init)
   router.post('/initdata', initCtrl.addData)
   router.get('/login',userCtrl.login)
+  router.post('/addUser',userCtrl.addUser)
 }

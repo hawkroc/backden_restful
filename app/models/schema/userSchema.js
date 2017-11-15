@@ -9,17 +9,20 @@ const UserSchema = new Schema({
   },
   key: {
     type: String,
-    default: "1111",
     unique: true
   },
   balance: {
     createAt: {
-      type: Number,
-      default: 0
+      type: Date,
+      default: Date.now()
     },
     updateAt: {
       type: Date,
       default: Date.now()
+    },
+    number:{
+      type:Number,
+      default:0
     }
   }
 });
