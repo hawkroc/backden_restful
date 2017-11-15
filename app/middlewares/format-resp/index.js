@@ -16,10 +16,10 @@ exports.formatResp = function (options) {
   let defaultFormat = options.format || 'JSONString'
 
   return function formatResp (result, req, res, next) {
+    //console.log('result'+JSON.stringify(result))
     if (_.isError(result)) {
       result = {
-        status: 'interalErrror',
-        code: 500,
+        code: result.status,
         err: result,
         msg: result.message
       }
@@ -36,25 +36,28 @@ exports.formatResp = function (options) {
      * @param {any} err
      */
     function handelError (err){
-      //console.log('err'+JSON.stringify(err))
       console.log('\nError begin', '\n', err, '\n', 'Error end')
     }
-    if (err) {
-      handelError(err)
-    } else {
-      let resp = {
-        Success: status[result.code].succeed,
-        Code: result.code,
-        Desc: desc,
-        Msg: msg,
-        extData: ext
-      }
-      let format = defaultFormat
-      if (format === 'JSONString') {
-        res.send(JSON.stringify(resp))
-      } else {
-        res.json(resp)
-      }
+
+    let resp = {
+      Success: status[result.code].succeed,
+      Code: result.code,
+      Desc: desc,
+      Msg: msg,
+      extData: ext
     }
+  
+    if (err) {
+      resp.Code=result.code
+      //res.
+    } 
+    let format = defaultFormat
+    if (format === 'JSONString') {
+      res.send(JSON.stringify(resp))
+    } else {
+      res.json(resp)
+    }
+
+
   }
 }

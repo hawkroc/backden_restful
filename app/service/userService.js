@@ -21,10 +21,11 @@ const getUser = async () => {
 // };
 
 const addUser = async (name, key) => {
+
   let user = new User();
   user.key = key;
   user.name = name;
-   await User.deleteOne({ key: key }, err => {
+return   await User.deleteOne({ key: key }, err => {
     if (err) {
       return err;
     }
@@ -34,7 +35,7 @@ const addUser = async (name, key) => {
       }
     });
   });
-  return user
+
 };
 
 module.exports = {
