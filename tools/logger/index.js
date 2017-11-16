@@ -13,37 +13,37 @@ fse.mkdirsSync(config.log.dir)
 fse.mkdirsSync(config.log.dir + 'main')
 
 const log4jsConfig = {
-  'replaceConsole': config.log.replaceConsole,
-  'level': config.log.level,
-  'appenders': [{
-    'type': 'console'
-  }, {
-    'type': 'dateFile',
-    'filename': path.join(config.log.dir, 'main/log'),
-    'pattern': 'yyyyMMdd',
-    'alwaysIncludePattern': true,
-    'maxLogSize': 20480,
-    'backups': 3,
-    'category': 'main'
-  }, {
-    'type': 'logLevelFilter',
-    'level': 'WARN',
-    'appender': {
-      type: 'file',
-      filename: path.join(config.log.dir, 'main.WARN'),
-      maxLogSize: 20480
-    },
-    'category': 'main'
-  }, {
-    'type': 'logLevelFilter',
-    'level': 'ERROR',
-    'appender': {
-      type: 'file',
-      filename: path.join(config.log.dir, 'main.ERROR'),
-      maxLogSize: 20480
-    },
-    'category': 'main'
-  }]
+	'replaceConsole': config.log.replaceConsole,
+	'level': config.log.level,
+	'appenders': [{
+		'type': 'console'
+	}, {
+		'type': 'dateFile',
+		'filename': path.join(config.log.dir, 'main/log'),
+		'pattern': 'yyyyMMdd',
+		'alwaysIncludePattern': true,
+		'maxLogSize': 20480,
+		'backups': 3,
+		'category': 'main'
+	}, {
+		'type': 'logLevelFilter',
+		'level': 'WARN',
+		'appender': {
+			type: 'file',
+			filename: path.join(config.log.dir, 'main.WARN'),
+			maxLogSize: 20480
+		},
+		'category': 'main'
+	}, {
+		'type': 'logLevelFilter',
+		'level': 'ERROR',
+		'appender': {
+			type: 'file',
+			filename: path.join(config.log.dir, 'main.ERROR'),
+			maxLogSize: 20480
+		},
+		'category': 'main'
+	}]
 }
 
 log4js.configure(log4jsConfig)

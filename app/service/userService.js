@@ -1,8 +1,8 @@
 'use strict'
 const User = require('../models/user')
-const getUser = async () => {
-  let ret = await 'test is success' // db.Init.find()
-  return ret
+const getUser = async() => {
+	let ret = await 'test is success' // db.Init.find()
+	return ret
 }
 
 // const addUser = async (name,key) => {
@@ -21,22 +21,22 @@ const getUser = async () => {
 // };
 
 const addUser =  (name, key) => {
-  let user = new User()
-  user.key = key
-  user.name = name
-  return    User.deleteOne({ key: key }, err => {
-    if (err) {
-      return err
-    }
-    user.save(err => {
-      if (err) {
-        return err
-      }
-    })
-  })
+	let user = new User()
+	user.key = key
+	user.name = name
+	return    User.deleteOne({ key: key }, err => {
+		if (err) {
+			return err
+		}
+		user.save(err => {
+			if (err) {
+				return err
+			}
+		})
+	})
 }
 
 module.exports = {
-  getUser,
-  addUser
+	getUser,
+	addUser
 }

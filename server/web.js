@@ -31,14 +31,14 @@ app.use(serveFavicon(path.join(__dirname, '../static/img/fav.ico')))
 app.use(router)
 app.use(formatResp.formatResp({format: 'JSON'}))
 
-function start () {
-  app.listen(config.web.port, function () {
-    logger.info(config.web.name, config.web.url, 'start up!')
-  })
-};
+function start() {
+	app.listen(config.web.port, function() {
+		logger.info(config.web.name, config.web.url, 'start up!')
+	})
+}
 
 if (!module.parent) {
-  start()
+	start()
 } else {
-  exports.start = start
+	exports.start = start
 }

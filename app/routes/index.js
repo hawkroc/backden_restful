@@ -12,12 +12,12 @@ const express   = require('express')
 const path      = require('path')
 const fs        = require('fs')
 
-function createRouter (versionDir) {
-  let router = express.Router()
-  fs.readdirSync(versionDir).forEach(function (file) {
-    require(path.join(versionDir, file))(router)
-  })
-  return router
+function createRouter(versionDir) {
+	let router = express.Router()
+	fs.readdirSync(versionDir).forEach(function(file) {
+		require(path.join(versionDir, file))(router)
+	})
+	return router
 }
 
 const router = module.exports = express.Router()
